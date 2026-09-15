@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Jorge Viloria ♡</title>
+
+<style>
+
+/* =========================
+   FUENTES
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f6f0e6;
+    color:#4a3830;
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+}
+
+section{
+    min-height:100vh;
+    padding:55px 24px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+h1,h2,h3,p{
+    margin:0;
+}
+
+.serif{
+    font-family:'Cormorant Garamond',serif;
+}
+
+.heart{
+    color:#a95743;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.btn{
+    border:0;
+    background:#a95743;
+    color:white;
+    border-radius:30px;
+    padding:15px 31px;
+    font-family:'Montserrat',sans-serif;
+    font-size:13px;
+    cursor:pointer;
+    box-shadow:0 8px 20px #a9574330;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   INICIO
+========================= */
+
+#inicio{
+    text-align:center;
+    background:linear-gradient(#f8f2e9,#f2e8da);
+    position:relative;
+}
+
+#inicio h1{
+    font-size:58px;
+    font-weight:500;
+    line-height:.95;
+}
+
+#inicio .sub{
+    font-size:13px;
+    letter-spacing:3px;
+    margin:22px 0 35px;
+    text-transform:uppercase;
+}
+
+.hint{
+    position:absolute;
+    bottom:22px;
+    font-size:10px;
+    letter-spacing:2px;
+    opacity:.6;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+#historia{
+    position:relative;
+}
+
+.date{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    color:#856b5e;
+    margin-bottom:20px;
+}
+
+.polaroid{
+    background:#fff;
+    padding:12px 12px 30px;
+    box-shadow:0 10px 28px #5a46301e;
+    transform:rotate(-1.5deg);
+    max-width:340px;
+    width:100%;
+}
+
+.polaroid img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    display:block;
+}
+
+.names{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    margin-top:12px;
+}
+
+.caption{
+    margin-top:28px;
+    max-width:450px;
+    text-align:center;
+    line-height:1.7;
+    font-size:14px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.envelope-container{
+    margin-top:45px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    position:relative;
+}
+
+.envelope-animated{
+    width:340px;
+    height:220px;
+    position:relative;
+    perspective:1000px;
+    margin-top:120px;
+    margin-bottom:120px;
+}
+
+.envelope-inside{
+    position:absolute;
+    inset:0;
+    background:#ead9c2;
+    border:1px solid #d8c2a8;
+    overflow:visible;
+    z-index:1;
+}
+
+.mini-letter{
+    position:absolute;
+    width:270px;
+    height:190px;
+    left:35px;
+    top:25px;
+    background:#fffaf3;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px #5a463025;
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    color:#856b5e;
+    z-index:2;
+    opacity:1;
+    transform:translateY(0) scale(.95);
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1),
+        opacity .7s ease;
+}
+
+.mini-letter-heart{
+    color:#a95743;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.envelope-flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:170px solid transparent;
+    border-right:170px solid transparent;
+    border-top:120px solid #ddc5a9;
+    transform-origin:top center;
+    transition:transform .9s cubic-bezier(.4,0,.2,1);
+    z-index:5;
+}
+
+.envelope-front{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:170px solid #e5cfb4;
+    border-right:170px solid #e5cfb4;
+    border-bottom:110px solid #d6bda0;
+    z-index:4;
+}
+
+.envelope-inside .seal{
+    position:absolute;
+    top:82px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#a95743;
+    color:white;
+    font-size:22px;
+    box-shadow:0 5px 15px #5a463025;
+    z-index:6;
+}
+
+.envelope-animated.open .envelope-flap{
+    transform:rotateX(180deg);
+    z-index:1;
+}
+
+.envelope-animated.open .mini-letter{
+    transform:translateY(-145px) scale(1.05);
+    opacity:0;
+}
+
+.open-letter-btn{
+    margin-top:0;
+    transition:opacity .5s ease, transform .5s ease;
+}
+
+.envelope-container.opened .open-letter-btn{
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(10px);
+}
+
+
+/* =========================
+   CARTA GRANDE
+========================= */
+
+.letter-section{
+    background:#f2e8da;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(60px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 0s linear 1.2s;
+}
+
+.letter-section.show-letter{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 0s linear 0s;
+}
+
+.letter-wrapper{
+    position:relative;
+    width:min(540px,100%);
+}
+
+.letter{
+    position:relative;
+    width:100%;
+    max-width:540px;
+    background:#fffaf3;
+    padding:45px 35px;
+    box-shadow:0 15px 45px #5a463025;
+    line-height:1.9;
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    border-top:1px solid #eee1d0;
+}
+
+.letter-top{
+    text-align:center;
+    color:#a95743;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.letter-title{
+    font-size:28px;
+    color:#4a3830;
+    margin-bottom:18px;
+}
+
+.letter p{
+    margin-bottom:16px;
+}
+
+.letter-signature{
+    margin-top:28px;
+    text-align:right;
+    color:#856b5e;
+    font-size:22px;
+    line-height:1.4;
+}
+
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
+
+.floating-heart{
+    position:absolute;
+    color:#a95743;
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    opacity:0;
+    pointer-events:none;
+}
+
+.heart-one{
+    left:-35px;
+    top:30px;
+}
+
+.heart-two{
+    right:-30px;
+    top:100px;
+}
+
+.heart-three{
+    left:20px;
+    bottom:30px;
+}
+
+.letter-section.show-letter .heart-one{
+    animation:flotarCorazon 3s ease-in-out .3s infinite;
+}
+
+.letter-section.show-letter .heart-two{
+    animation:flotarCorazon 3s ease-in-out .8s infinite;
+}
+
+.letter-section.show-letter .heart-three{
+    animation:flotarCorazon 3s ease-in-out 1.2s infinite;
+}
+
+@keyframes flotarCorazon{
+
+    0%{
+        opacity:0;
+        transform:translateY(15px) scale(.7);
+    }
+
+    30%{
+        opacity:.7;
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(-8px) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-35px) scale(.8);
+    }
+
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.counter-wrap{
+    text-align:center;
+}
+
+.counter{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin:28px 0;
+}
+
+.unit{
+    background:#fffaf3;
+    padding:14px 11px;
+    min-width:75px;
+    box-shadow:0 5px 15px #5a463018;
+}
+
+.unit strong{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-size:31px;
+    font-weight:500;
+}
+
+.unit span{
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   FAMILIA
+========================= */
+
+.family{
+    text-align:center;
+    background:#f6f0e6;
+}
+
+.family-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    max-width:500px;
+    width:100%;
+    margin-top:30px;
+}
+
+.memory{
+    background:#fffaf3;
+    padding:20px 15px;
+    box-shadow:0 6px 18px #5a463018;
+}
+
+.memory .icon{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.memory h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.memory p{
+    font-size:11px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.album{
+    text-align:center;
+    background:#f2e8da;
+}
+
+.album h2{
+    font-size:42px;
+    font-weight:500;
+    max-width:520px;
+    line-height:1.05;
+}
+
+.album-sub{
+    margin-top:10px;
+    font-size:12px;
+    letter-spacing:1px;
+    opacity:.7;
+}
+
+.carousel{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    max-width:520px;
+    margin-top:35px;
+}
+
+.carousel-window{
+    width:100%;
+    overflow:hidden;
+    background:#fff;
+    padding:12px;
+    box-shadow:0 10px 28px #5a46301e;
+}
+
+.carousel-track{
+    display:flex;
+    transition:transform .5s ease;
+    touch-action:pan-y;
+}
+
+.slide{
+    min-width:100%;
+    position:relative;
+}
+
+.slide img{
+    width:100%;
+    height:420px;
+    display:block;
+    object-fit:cover;
+}
+
+.arrow{
+    border:none;
+    background:#a95743;
+    color:white;
+    width:42px;
+    height:42px;
+    min-width:42px;
+    border-radius:50%;
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    line-height:1;
+    cursor:pointer;
+    box-shadow:0 5px 15px #5a463025;
+    transition:.25s;
+}
+
+.arrow:hover{
+    transform:scale(1.08);
+}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin-top:20px;
+    flex-wrap:wrap;
+    max-width:400px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#d5c4b4;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.dot.active{
+    background:#a95743;
+    transform:scale(1.3);
+}
+
+.photo-caption{
+    margin-top:15px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    color:#856b5e;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section{
+    text-align:center;
+    background:#f6f0e6;
+}
+
+.video-section h2{
+    font-size:42px;
+    font-weight:500;
+    max-width:550px;
+    line-height:1.05;
+}
+
+.video-sub{
+    margin-top:12px;
+    font-size:12px;
+    letter-spacing:1px;
+    opacity:.7;
+}
+
+.video-frame{
+    width:min(720px,100%);
+    margin-top:35px;
+    padding:12px;
+    background:#fffaf3;
+    box-shadow:0 12px 35px #5a463025;
+    position:relative;
+}
+
+.video-frame::before{
+    content:"♡";
+    position:absolute;
+    top:-15px;
+    left:-15px;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:#a95743;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    z-index:2;
+}
+
+.video-frame video{
+    width:100%;
+    display:block;
+    max-height:500px;
+    background:#2f2622;
+}
+
+.video-message{
+    max-width:550px;
+    margin-top:25px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    line-height:1.5;
+    color:#856b5e;
+}
+
+
+/* =========================
+   PREGUNTA
+========================= */
+
+.question{
+    text-align:center;
+}
+
+.question h2{
+    font-size:40px;
+    font-weight:500;
+    max-width:500px;
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.message{
+    height:35px;
+    margin-top:22px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    color:#a95743;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    text-align:center;
+    background:#f8f2e9;
+}
+
+.final > img{
+    width:min(360px,100%);
+    height:400px;
+    object-fit:cover;
+    box-shadow:0 10px 30px #5a463030;
+}
+
+.final h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:40px;
+    margin-top:30px;
+    text-align:center;
+    font-weight:500;
+    max-width:500px;
+}
+
+.final > p{
+    margin-top:10px;
+    letter-spacing:2px;
+    font-size:11px;
+    text-transform:uppercase;
+}
+
+.signature{
+    margin-top:35px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    color:#856b5e;
+}
+
+
+/* =========================
+   IMAGEN ESPECIAL FINAL
+========================= */
+
+.birthday-card{
+    margin-top:45px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    animation:aparecer 1s ease;
+}
+
+.birthday-card img{
+    width:min(520px,100%);
+    height:auto;
+    display:block;
+    box-shadow:0 12px 35px #5a463030;
+    border:10px solid #fffaf3;
+    transform:rotate(1deg);
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.birthday-card img:hover{
+    transform:rotate(0deg) scale(1.02);
+    box-shadow:0 18px 45px #5a463040;
+}
+
+.birthday-card p{
+    margin-top:25px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    color:#856b5e;
+}
+
+
+/* =========================
+   ANIMACIÓN GENERAL
+========================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.heart,
+h1,
+h2{
+    animation:aparecer .8s ease;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px){
+
+    section{
+        padding:50px 18px;
+    }
+
+    #inicio h1{
+        font-size:48px;
+    }
+
+    #inicio .sub{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .envelope-animated{
+        width:300px;
+        height:195px;
+        margin-top:100px;
+        margin-bottom:100px;
+    }
+
+    .envelope-flap{
+        border-left-width:150px;
+        border-right-width:150px;
+        border-top-width:105px;
+    }
+
+    .envelope-front{
+        border-left-width:150px;
+        border-right-width:150px;
+        border-bottom-width:98px;
+    }
+
+    .mini-letter{
+        width:240px;
+        height:165px;
+        left:30px;
+        top:20px;
+        font-size:20px;
+    }
+
+    .envelope-animated.open .mini-letter{
+        transform:translateY(-125px) scale(1.04);
+        opacity:0;
+    }
+
+    .letter{
+        padding:35px 25px;
+        font-size:19px;
+    }
+
+    .letter-title{
+        font-size:26px;
+    }
+
+    .heart-one{
+        left:-5px;
+    }
+
+    .heart-two{
+        right:-5px;
+    }
+
+    .family-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .memory{
+        padding:17px 10px;
+    }
+
+    .memory h3{
+        font-size:20px;
+    }
+
+    .memory p{
+        font-size:10px;
+    }
+
+    .album h2{
+        font-size:37px;
+    }
+
+    .carousel{
+        gap:7px;
+    }
+
+    .arrow{
+        width:35px;
+        min-width:35px;
+        height:35px;
+        font-size:27px;
+    }
+
+    .slide img{
+        height:380px;
+    }
+
+    .video-section h2{
+        font-size:36px;
+    }
+
+    .video-frame{
+        padding:8px;
+        margin-top:30px;
+    }
+
+    .video-message{
+        font-size:19px;
+    }
+
+    .final h2{
+        font-size:35px;
+    }
+
+    .birthday-card img{
+        width:100%;
+        border-width:7px;
+    }
+
+    .birthday-card p{
+        font-size:21px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR PEQUEÑO
+========================= */
+
+@media(max-width:380px){
+
+    #inicio h1{
+        font-size:42px;
+    }
+
+    .envelope-animated{
+        transform:scale(.9);
+    }
+
+    .counter{
+        gap:5px;
+    }
+
+    .unit{
+        min-width:65px;
+        padding:12px 8px;
+    }
+
+    .unit strong{
+        font-size:27px;
+    }
+
+    .unit span{
+        font-size:8px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     INICIO
+========================= -->
+
+<section id="inicio">
+
+    <div class="heart">
+        ♡
+    </div>
+
+    <h1 class="serif">
+        Para Jorge Viloria
+    </h1>
+
+    <p class="sub">
+        Un pequeño homenaje al padre y esposo que tanto amamos
+    </p>
+
+    <button
+        class="btn"
+        onclick="document.querySelector('#historia').scrollIntoView({behavior:'smooth'})"
+    >
+        Comenzar ♡
+    </button>
+
+    <div class="hint">
+        DESLIZA HACIA ABAJO
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HISTORIA
+========================= -->
+
+<section id="historia">
+
+    <p class="date">
+        Una vida llena de historias
+    </p>
+
+
+    <div class="polaroid">
+
+        <img
+            src="foto1.jpg"
+            alt="Jorge Viloria"
+        >
+
+        <div class="names">
+            Jorge ♡
+        </div>
+
+    </div>
+
+
+    <p class="caption">
+
+        Hoy queremos detenernos un momento para celebrar
+        a un hombre que ha construido una vida llena de
+        recuerdos, aprendizajes, amor y momentos que
+        permanecerán siempre en nuestra familia.
+
+    </p>
+
+
+    <!-- =========================
+         SOBRE
+    ========================= -->
+
+    <div class="envelope-container">
+
+        <div
+            class="envelope-animated"
+            id="sobre"
+        >
+
+            <div class="envelope-inside">
+
+                <div class="seal">
+                    ♡
+                </div>
+
+            </div>
+
+
+            <div class="mini-letter">
+
+                <div class="mini-letter-heart">
+                    ♡
+                </div>
+
+                <p>
+                    Hay algo para ti...
+                </p>
+
+            </div>
+
+
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-front"></div>
+
+        </div>
+
+
+        <button
+            class="btn open-letter-btn"
+            onclick="abrirCarta()"
+        >
+            Abrir carta ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CARTA GRANDE
+========================= -->
+
+<section
+    id="carta"
+    class="letter-section"
+>
+
+    <div class="letter-wrapper">
+
+        <div class="floating-heart heart-one">
+            ♡
+        </div>
+
+        <div class="floating-heart heart-two">
+            ♡
+        </div>
+
+        <div class="floating-heart heart-three">
+            ♡
+        </div>
+
+
+        <div class="letter">
+
+            <div class="letter-top">
+                ♡
+            </div>
+
+
+            <p class="letter-title">
+                Para Jorge Viloria:
+            </p>
+
+
+            <p>
+                Hoy queremos recordarte lo importante que
+                eres para nuestra familia.
+            </p>
+
+
+            <p>
+                Gracias por ser un padre que ha estado presente
+                en tantos momentos, por cada consejo, cada
+                enseñanza, cada esfuerzo y por todas esas
+                pequeñas cosas que quizás no siempre decimos,
+                pero que valoramos muchísimo.
+            </p>
+
+
+            <p>
+                Gracias también por compartir la vida como
+                esposo, por construir junto a nuestra familia
+                tantos recuerdos y por estar presente en cada
+                etapa de este camino.
+            </p>
+
+
+            <p>
+                Tu historia no está hecha solamente de años,
+                sino de personas, momentos, aprendizajes,
+                risas y recuerdos que llevaremos siempre
+                con nosotros.
+            </p>
+
+
+            <p>
+                Esperamos que este nuevo año de vida esté
+                lleno de felicidad, tranquilidad, nuevos
+                sueños y muchísimas razones para sonreír.
+            </p>
+
+
+            <p>
+                Te queremos muchísimo y esperamos poder
+                seguir compartiendo contigo muchos años,
+                aventuras y recuerdos más. ♡
+            </p>
+
+
+            <div class="letter-signature">
+
+                Con todo nuestro amor,<br>
+
+                tu familia ♡
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTADOR
+========================= -->
+
+<section>
+
+    <div class="counter-wrap">
+
+        <div class="heart">
+            ♡
+        </div>
+
+
+        <h2
+            class="serif"
+            style="font-size:42px;font-weight:500"
+        >
+            Desde aquel día...
+        </h2>
+
+
+        <p style="margin-top:10px">
+            Han pasado
+        </p>
+
+
+        <div class="counter">
+
+            <div class="unit">
+
+                <strong id="years">
+                    0
+                </strong>
+
+                <span>
+                    Años
+                </span>
+
+            </div>
+
+
+            <div class="unit">
+
+                <strong id="months">
+                    0
+                </strong>
+
+                <span>
+                    Meses
+                </span>
+
+            </div>
+
+
+            <div class="unit">
+
+                <strong id="days">
+                    0
+                </strong>
+
+                <span>
+                    Días
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <p style="font-size:12px;opacity:.7">
+
+            de historias, aprendizajes y recuerdos ♡
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GRACIAS POR
+========================= -->
+
+<section class="family">
+
+    <div class="heart">
+        ♡
+    </div>
+
+
+    <h2
+        class="serif"
+        style="font-size:42px;font-weight:500"
+    >
+        Gracias por...
+    </h2>
+
+
+    <div class="family-grid">
+
+
+        <div class="memory">
+
+            <div class="icon">
+                ☺
+            </div>
+
+            <h3>
+                Tu alegría
+            </h3>
+
+            <p>
+                Por todas las risas y momentos felices
+                que has compartido con nosotros.
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <div class="icon">
+                ♡
+            </div>
+
+            <h3>
+                Tu cariño
+            </h3>
+
+            <p>
+                Por estar siempre presente y demostrar
+                cuánto nos quieres.
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                Tus consejos
+            </h3>
+
+            <p>
+                Por enseñarnos tantas cosas y ayudarnos
+                a crecer.
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <div class="icon">
+                ♧
+            </div>
+
+            <h3>
+                Nuestra familia
+            </h3>
+
+            <p>
+                Por construir junto a nosotros tantos
+                momentos que guardaremos siempre.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ÁLBUM
+========================= -->
+
+<section class="album">
+
+    <div class="heart">
+        ♡
+    </div>
+
+
+    <h2 class="serif">
+        Algunos de nuestros recuerdos
+    </h2>
+
+
+    <p class="album-sub">
+        momentos que queremos guardar para siempre
+    </p>
+
+
+    <div class="carousel">
+
+
+        <button
+            class="arrow"
+            onclick="moverCarrusel(-1)"
+        >
+            ‹
+        </button>
+
+
+        <div class="carousel-window">
+
+            <div
+                class="carousel-track"
+                id="carouselTrack"
+            >
+
+
+                <!-- FOTO 1 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto1.jpg"
+                        alt="Recuerdo familiar 1"
+                    >
+
+                    <p class="photo-caption">
+                        Un recuerdo para guardar ♡
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 2 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto2.jpg"
+                        alt="Recuerdo familiar 2"
+                    >
+
+                    <p class="photo-caption">
+                        Momentos que siempre recordaremos
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 3 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto3.jpg"
+                        alt="Recuerdo familiar 3"
+                    >
+
+                    <p class="photo-caption">
+                        Juntos en cada etapa ♡
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 4 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto4.jpg"
+                        alt="Recuerdo familiar 4"
+                    >
+
+                    <p class="photo-caption">
+                        Una historia llena de momentos
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 5 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto5.JPG"
+                        alt="Recuerdo familiar 5"
+                    >
+
+                    <p class="photo-caption">
+                        Gracias por tantos recuerdos ♡
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 6 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto6.jpg"
+                        alt="Recuerdo familiar 6"
+                    >
+
+                    <p class="photo-caption">
+                        Nuestra familia
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 7 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto7.jpg"
+                        alt="Recuerdo familiar 7"
+                    >
+
+                    <p class="photo-caption">
+                        Otro recuerdo para guardar ♡
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 8 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto8.jpeg"
+                        alt="Recuerdo familiar 8"
+                    >
+
+                    <p class="photo-caption">
+                        Un momento muy especial
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 9 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto9.JPG"
+                        alt="Recuerdo familiar 9"
+                    >
+
+                    <p class="photo-caption">
+                        Juntos en cada etapa
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 10 -->
+
+                <div class="slide">
+
+                    <img
+                        src="foto10.jpg"
+                        alt="Recuerdo familiar 10"
+                    >
+
+                    <p class="photo-caption">
+                        Siempre creando recuerdos ♡
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="arrow"
+            onclick="moverCarrusel(1)"
+        >
+            ›
+        </button>
+
+
+    </div>
+
+
+    <div
+        class="dots"
+        id="dots"
+    ></div>
+
+</section>
+
+
+<!-- =========================
+     VIDEO
+========================= -->
+
+<section class="video-section">
+
+    <div class="heart">
+        ♡
+    </div>
+
+
+    <h2 class="serif">
+        Un pedacito de nuestros recuerdos
+    </h2>
+
+
+    <p class="video-sub">
+        Porque hay momentos que merecen volver a vivirse
+    </p>
+
+
+    <div class="video-frame">
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="portada-video.jpg"
+        >
+
+            <source
+                src="video.mp4"
+                type="video/mp4"
+            >
+
+            Tu navegador no puede reproducir este video.
+
+        </video>
+
+    </div>
+
+
+    <p class="video-message">
+
+        Cada recuerdo guarda una historia,
+        y cada historia nos recuerda lo afortunados
+        que somos de tenerte. ♡
+
+    </p>
+
+</section>
+
+
+<!-- =========================
+     PREGUNTA
+========================= -->
+
+<section class="question">
+
+    <div class="heart">
+        ♡
+    </div>
+
+
+    <h2 class="serif">
+
+        ¿Listo para seguir creando recuerdos
+        con nosotros?
+
+    </h2>
+
+
+    <button
+        class="btn"
+        onclick="responder()"
+    >
+        Siempre ♡
+    </button>
+
+
+    <div
+        id="respuesta"
+        class="message"
+    ></div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+    <div class="heart">
+        ♡
+    </div>
+
+
+    <!-- FOTO FINAL -->
+
+    <img
+        src="foto3.jpg"
+        alt="Jorge Viloria y su familia"
+    >
+
+
+    <h2 class="serif">
+        La mejor parte de la historia
+    </h2>
+
+
+    <p>
+        todavía está por escribirse ♡
+    </p>
+
+
+    <div class="signature">
+
+        Con todo nuestro amor,<br>
+
+        tu familia
+
+    </div>
+
+
+    <!-- =========================
+         IMAGEN ESPECIAL
+    ========================= -->
+
+    <div class="birthday-card">
+
+        <img
+            src="images.jpeg"
+            alt="We believe it's your birthday"
+        >
+
+
+        <p>
+            Porque claramente...
+            ¡eres una leyenda! ♡
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+const fechaInicio =
+    new Date("1983-09-15T00:00:00");
+
+
+function actualizarContador(){
+
+    const ahora = new Date();
+
+
+    let years =
+        ahora.getFullYear()
+        -
+        fechaInicio.getFullYear();
+
+
+    let months =
+        ahora.getMonth()
+        -
+        fechaInicio.getMonth();
+
+
+    let days =
+        ahora.getDate()
+        -
+        fechaInicio.getDate();
+
+
+    if(days < 0){
+
+        months--;
+
+
+        const ultimoMes =
+            new Date(
+                ahora.getFullYear(),
+                ahora.getMonth(),
+                0
+            ).getDate();
+
+
+        days += ultimoMes;
+
+    }
+
+
+    if(months < 0){
+
+        years--;
+
+        months += 12;
+
+    }
+
+
+    document.getElementById("years").textContent =
+        years;
+
+
+    document.getElementById("months").textContent =
+        months;
+
+
+    document.getElementById("days").textContent =
+        days;
+
+}
+
+
+actualizarContador();
+
+
+setInterval(
+    actualizarContador,
+    60000
+);
+
+
+/* =========================
+   ABRIR CARTA
+========================= */
+
+function abrirCarta(){
+
+    const sobre =
+        document.getElementById("sobre");
+
+
+    const contenedor =
+        document.querySelector(
+            ".envelope-container"
+        );
+
+
+    const carta =
+        document.getElementById("carta");
+
+
+    if(
+        sobre.classList.contains("open")
+    ){
+        return;
+    }
+
+
+    sobre.classList.add("open");
+
+    contenedor.classList.add("opened");
+
+
+    setTimeout(function(){
+
+        carta.classList.add("show-letter");
+
+
+        setTimeout(function(){
+
+            carta.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        },250);
+
+    },1400);
+
+}
+
+
+/* =========================
+   CARRUSEL
+========================= */
+
+let fotoActual = 0;
+
+
+const track =
+    document.getElementById(
+        "carouselTrack"
+    );
+
+
+const slides =
+    document.querySelectorAll(
+        ".slide"
+    );
+
+
+const dotsContainer =
+    document.getElementById(
+        "dots"
+    );
+
+
+/* =========================
+   CREAR PUNTITOS
+========================= */
+
+slides.forEach(
+    function(slide,index){
+
+        const dot =
+            document.createElement("span");
+
+
+        dot.classList.add("dot");
+
+
+        if(index === 0){
+
+            dot.classList.add("active");
+
+        }
+
+
+        dot.addEventListener(
+            "click",
+            function(){
+
+                irAFoto(index);
+
+            }
+        );
+
+
+        dotsContainer.appendChild(dot);
+
+    }
+);
+
+
+const dots =
+    document.querySelectorAll(".dot");
+
+
+/* =========================
+   ACTUALIZAR CARRUSEL
+========================= */
+
+function actualizarCarrusel(){
+
+    track.style.transform =
+        `translateX(-${fotoActual * 100}%)`;
+
+
+    dots.forEach(
+        function(dot,index){
+
+            dot.classList.toggle(
+                "active",
+                index === fotoActual
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   MOVER CARRUSEL
+========================= */
+
+function moverCarrusel(direccion){
+
+    const totalFotos =
+        slides.length;
+
+
+    fotoActual += direccion;
+
+
+    if(fotoActual >= totalFotos){
+
+        fotoActual = 0;
+
+    }
+
+
+    if(fotoActual < 0){
+
+        fotoActual =
+            totalFotos - 1;
+
+    }
+
+
+    actualizarCarrusel();
+
+}
+
+
+/* =========================
+   IR A UNA FOTO
+========================= */
+
+function irAFoto(numero){
+
+    fotoActual = numero;
+
+    actualizarCarrusel();
+
+}
+
+
+/* =========================
+   SWIPE EN CELULAR
+========================= */
+
+let inicioX = 0;
+
+let finalX = 0;
+
+
+track.addEventListener(
+    "touchstart",
+    function(event){
+
+        inicioX =
+            event.touches[0].clientX;
+
+    }
+);
+
+
+track.addEventListener(
+    "touchend",
+    function(event){
+
+        finalX =
+            event.changedTouches[0].clientX;
+
+
+        const diferencia =
+            inicioX - finalX;
+
+
+        if(diferencia > 50){
+
+            moverCarrusel(1);
+
+        }
+
+
+        if(diferencia < -50){
+
+            moverCarrusel(-1);
+
+        }
+
+    }
+);
+
+
+/* =========================
+   BOTÓN FINAL
+========================= */
+
+function responder(){
+
+    document.getElementById(
+        "respuesta"
+    ).textContent =
+        "¡Entonces sigamos creando recuerdos juntos! ♡";
+
+}
+
+</script>
+
+</body>
+
+</html>
